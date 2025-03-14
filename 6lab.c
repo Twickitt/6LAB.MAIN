@@ -6,7 +6,7 @@
 #include "Display_Student.h"
 #define  N 1
 
-#define NAME "stud.dat"
+#define FILE_NAME "stud.dat"
 
 #define USE_PREDEFINED_DATA  // Закомментируйте, если хотите ввод вручную
 
