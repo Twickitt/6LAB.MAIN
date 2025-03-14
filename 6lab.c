@@ -4,32 +4,28 @@
 #include "Find_Student.h"
 #include "Edit_Student.h"
 #include "Display_Student.h"
+
 #define  N 1
 
-#define FILE_NAME "stud.dat"
-
-#define USE_PREDEFINED_DATA  // Закомментируйте, если хотите ввод вручную
+#define NAME "stud.dat"
 
 void (*menu[])(void) = {Add_Student, Del_Student, Find_Student, Edit_Student, Displ_Student};
 
 
 int main(){
 
-    #if N == 5
+    #if N == 1
     FILE *file = fopen(NAME, "w");
     fseek(file, 0, SEEK_SET);
-    Student predefinedStudents[] = {
+    Student predefStud[] = {
         {"Alice Johnson", "Engineering", "E21", 3.8},
-        {"Bob Smith", "Mathematics", "M2", 3.5},
+        {"Bob Smith", "Math", "M2", 3.5},
+        {"Chan Sun", "Math", "M2", 5},
         {"Charlie Brown", "Physics", "245", 3.9}
     };
-    fwrite(predefinedStudents, sizeof(Student), 3, file);
+    fwrite(predefStud, sizeof(Student), 4, file);
     fclose(file);
-
-
-
     #endif
-
 
 
     int choice;
