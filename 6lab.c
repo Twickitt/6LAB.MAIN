@@ -6,27 +6,13 @@
 #include "Display_Student.h"
 
 #define FILE_NAME "stud.dat"
-#define N 1
 
+#define NAME "stud.dat"
 
 void (*menu[])(void) = {Add_Student, Del_Student, Find_Student, Edit_Student, Displ_Student};
 
 
 int main(){
-
-    #if N == 1
-    FILE *file = fopen(FILE_NAME, "w");
-    fseek(file, 0, SEEK_SET);
-    Student Predef_data[] = {
-        {"Alice Johnson", "Engineering", "E21", 3.8},
-        {"Bob Smith", "Math", "M2", 3.5},
-        {"Chan Sun", "Math", "M2", 5},
-        {"Charlie Brown", "Physics", "245", 3.9}
-    };
-    fwrite(Predef_data, sizeof(Student), 4, file);
-    fclose(file);
-    #endif
-
 
     int choice;
 
@@ -50,4 +36,3 @@ int main(){
     } while (choice != 0);
     return 0;
 }
-
