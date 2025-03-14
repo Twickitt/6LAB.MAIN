@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define FILE_NAME "stud.dat"
+#define NAME "stud.dat"
 
 void Edit_Student();
 

@@ -1,11 +1,11 @@
 #include "structure.h"
 #include "Add_Student.h"
 #include "Delete_Student.h"
-#include "Find_Student.h"
 #include "Edit_Student.h"
+#include "Find_Student.h"
 #include "Display_Student.h"
 
-#define FILE_NAME "stud.dat"
+#define  N 1
 
 #define NAME "stud.dat"
 
@@ -13,6 +13,20 @@ void (*menu[])(void) = {Add_Student, Del_Student, Find_Student, Edit_Student, Di
 
 
 int main(){
+
+    #if N == 1
+    FILE *file = fopen(NAME, "w");
+    fseek(file, 0, SEEK_SET);
+    Student predefStud[] = {
+        {"Alice Johnson", "Engineering", "E21", 3.8},
+        {"Bob Smith", "Math", "M2", 3.5},
+        {"Chan Sun", "Math", "M2", 5},
+        {"Charlie Brown", "Physics", "245", 3.9}
+    };
+    fwrite(predefStud, sizeof(Student), 4, file);
+    fclose(file);
+    #endif
+
 
     int choice;
 

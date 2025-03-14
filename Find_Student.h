@@ -9,11 +9,10 @@
 
 #define NAME "stud.dat"
 
-<<<<<<< HEAD
 void Find_Student();
 
 #endif
-=======
+
 void Find_Student() {
     FILE *file = fopen(NAME, "rb");
     if (!file) {
@@ -40,4 +39,4 @@ void Find_Student() {
     }
     fclose(file);
 }
->>>>>>> a4febeedca9ddb45b8af5ca9133d887a7efc0f03
+
