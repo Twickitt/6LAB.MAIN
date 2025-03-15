@@ -13,7 +13,4 @@ void Find_Student();
 
 #endif
 
-void Find_Student();
-
-#endif
 
