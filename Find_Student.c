@@ -1,4 +1,10 @@
 #include "Find_Student.h"
+#include "structure.h"
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
 
 void Find_Student() {
     FILE *file = fopen(NAME, "rb");

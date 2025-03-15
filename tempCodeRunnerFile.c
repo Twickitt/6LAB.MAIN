@@ -1,2 +1,1 @@
-while (choice != 0);
-    return 0;
+Del_Student

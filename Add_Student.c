@@ -1,8 +1,14 @@
 #include "Add_Student.h"
+#include "structure.h"
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
 
 void Add_Student(){
 
-    FILE *file = fopen(FILE_NAME, "ab");
+    FILE *file = fopen(NAME, "ab");
     if (!file){
         perror("File opening error");
         return;

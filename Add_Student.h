@@ -1,13 +1,8 @@
-#ifndef _ADD_STUDENT_H
-#define _ADD_STUDENT_H
-
-#include "structure.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#ifndef ADD_STUDENT_H
+#define ADD_STUDENT_H
 
 
-#define FILE_NAME "stud.dat"
+#define NAME "stud.dat"
 
 void Add_Student();
 

@@ -1,6 +1,11 @@
 {
     "files.associations": {
         "stdlib.h": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "delete_student.h": "c",
+        "display_student.h": "c",
+        "edit_student.h": "c",
+        "add_student.h": "c",
+        "find_student.h": "c"
     }
 }

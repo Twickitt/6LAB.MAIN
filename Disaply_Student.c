@@ -1,8 +1,14 @@
 #include "Display_Student.h"
+#include "structure.h"
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
 
 void Displ_Student(){
 
-    FILE *file = fopen(FILE_NAME, "rb");
+    FILE *file = fopen(NAME, "rb");
     if (!file){
         perror("File opening error");
         return;

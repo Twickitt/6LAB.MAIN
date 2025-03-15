@@ -1,11 +1,11 @@
-#include "structure.h"
 #include "Add_Student.h"
 #include "Delete_Student.h"
+#include "Display_Student.h"
 #include "Edit_Student.h"
 #include "Find_Student.h"
-#include "Display_Student.h"
 
-#define  N 1
+
+#define  N 0
 
 #define NAME "stud.dat"
 

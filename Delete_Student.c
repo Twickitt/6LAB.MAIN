@@ -1,7 +1,13 @@
 #include "Delete_Student.h"
+#include "structure.h"
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
 
 void Del_Student() {
-    FILE *file = fopen(FILE_NAME, "rb");
+    FILE *file = fopen(NAME, "rb");
     if (!file) {
         perror("File opening error");
         return;
@@ -35,8 +41,8 @@ void Del_Student() {
     fclose(file);
     fclose(temp);
     if (deleted) {
-        remove(FILE_NAME);
-        rename("temp.dat", FILE_NAME);
+        remove(NAME);
+        rename("temp.dat", NAME);
         printf("Record deleted\n");
     } else {
         remove("temp.dat");
