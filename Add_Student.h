@@ -1,5 +1,5 @@
-#ifndef ADD_STUDENT_H
-#define ADD_STUDENT_H
+#ifndef _ADD_STUDENT_H
+#define _ADD_STUDENT_H
 
 
 #define NAME "stud.dat"

@@ -3,6 +3,6 @@
 
 #define NAME "stud.dat"
 
-void Del_Student();
+void Delete_Student();
 
 #endif

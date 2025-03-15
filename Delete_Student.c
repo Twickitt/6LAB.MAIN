@@ -1,12 +1,12 @@
 #include "Delete_Student.h"
-#include "structure.h"
+#include "Structure.h"
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
 
-void Del_Student() {
+void Delete_Student() {
     FILE *file = fopen(NAME, "rb");
     if (!file) {
         perror("File opening error");

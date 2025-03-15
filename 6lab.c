@@ -1,15 +1,18 @@
 #include "Add_Student.h"
 #include "Delete_Student.h"
-#include "Display_Student.h"
-#include "Edit_Student.h"
 #include "Find_Student.h"
+#include "Edit_Student.h"
+#include "Display_Student.h"
+#include "Structure.h"
 
+
+#include <stdio.h>
 
 #define  N 0
 
 #define NAME "stud.dat"
 
-void (*menu[])(void) = {Add_Student, Del_Student, Find_Student, Edit_Student, Displ_Student};
+void (*menu[])(void) = {Add_Student, Delete_Student, Find_Student, Edit_Student, Display_Student};
 
 
 int main(){

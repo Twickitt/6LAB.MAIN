@@ -1,5 +1,5 @@
 #include "Edit_Student.h"
-#include "structure.h"
+#include "Structure.h"
 
 #include <stdio.h>
 #include <stdlib.h>

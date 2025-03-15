@@ -1,12 +1,12 @@
 #include "Display_Student.h"
-#include "structure.h"
+#include "Structure.h"
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
 
-void Displ_Student(){
+void Display_Student(){
 
     FILE *file = fopen(NAME, "rb");
     if (!file){

@@ -6,6 +6,8 @@
         "display_student.h": "c",
         "edit_student.h": "c",
         "add_student.h": "c",
-        "find_student.h": "c"
-    }
+        "find_student.h": "c",
+        "string.h": "c"
+    },
+    "makefile.configureOnOpen": true
 }
