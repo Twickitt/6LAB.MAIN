@@ -1,47 +1,9 @@
-#include "Edit_Student.h"
-#include "Structure.h"
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-
-void Edit_Student() {
-    FILE *file = fopen(FILE_NAME, "rb+");
-    if (!file) {
-        perror("File opening error");
-        return;
-    }
-    fseek(file, 0, SEEK_END);
-    long fileSize = ftell(file);
-    int totalRecords = fileSize / sizeof(Student);
-    if (fileSize == 0) {
-        printf("Error, no students in the list to edit\n");
-        fclose(file);
-        return;
-    }
-    rewind(file);
-    int index;
-    printf("Enter recording number for editing: ");
-    scanf("%d", &index);
-    if (index < 1 || index > totalRecords) {
-        printf("Error, record not found, choose a valid slot\n");
-        fclose(file);
-        return;
-    }
-    getchar(); 
-    fseek(file, (index - 1) * sizeof(Student), SEEK_SET);
-    Student s;
-    fread(&s, sizeof(Student), 1, file);
-    
-    int choice;
-    do {
+do {
         printf("\nWhat do you want to edit?\n");
         printf("1. Full Name\n");
         printf("2. Faculty\n");
         printf("3. Group\n");
         printf("4. GPA\n");
-        printf("0. Cancel\n");
         printf("Select option: ");
         scanf("%d", &choice);
         getchar(); // Очистка буфера
@@ -67,14 +29,11 @@ void Edit_Student() {
                 scanf("%f", &s.GPA);
                 getchar();
                 break;
-            case 0:
-                printf("Edit canceled\n");
-                fclose(file);
-                return;
             default:
                 printf("Invalid option, try again\n");
         }
-    } while (choice < 0 || choice > 4);
+    } while ((choice < 0 || choice > 4) && choice != 0);
+
     
     fseek(file, (index - 1) * sizeof(Student), SEEK_SET);
     fwrite(&s, sizeof(Student), 1, file);

@@ -1,7 +1,7 @@
 #ifndef _DELETE_STUDENT_H_
 #define _DELETE_STUDENT_H_
 
-#define NAME "stud.dat"
+#define FILE_NAME "stud.dat"
 
 void Delete_Student();
 

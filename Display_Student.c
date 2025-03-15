@@ -8,7 +8,7 @@
 
 void Display_Student(){
 
-    FILE *file = fopen(NAME, "rb");
+    FILE *file = fopen(FILE_NAME, "rb");
     if (!file){
         perror("File opening error");
         return;

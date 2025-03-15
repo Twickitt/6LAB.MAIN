@@ -7,7 +7,7 @@
 
 
 void Delete_Student() {
-    FILE *file = fopen(NAME, "rb");
+    FILE *file = fopen(FILE_NAME, "rb");
     if (!file) {
         perror("File opening error");
         return;
@@ -41,8 +41,8 @@ void Delete_Student() {
     fclose(file);
     fclose(temp);
     if (deleted) {
-        remove(NAME);
-        rename("temp.dat", NAME);
+        remove(FILE_NAME);
+        rename("temp.dat", FILE_NAME);
         printf("Record deleted\n");
     } else {
         remove("temp.dat");

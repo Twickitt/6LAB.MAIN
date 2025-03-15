@@ -2,7 +2,7 @@
 #define _DISPLAY_STUDENT_H
 
 
-#define NAME "stud.dat"
+#define FILE_NAME "stud.dat"
 
 void Display_Student();
 

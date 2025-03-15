@@ -5,9 +5,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-
 void Find_Student() {
-    FILE *file = fopen(NAME, "rb");
+    FILE *file = fopen(FILE_NAME, "rb");
     if (!file) {
         perror("File opening error");
         return;
