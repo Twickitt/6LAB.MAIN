@@ -12,7 +12,7 @@ void Find_Student() {
         return;
     }
     char request[50];
-    printf("Enter the searching field (name/faculty/group/GPA) with enter: ");
+    printf("\nEnter the searching field (name/faculty/group/GPA) with enter: ");
     scanf("%49s", request);
     
     Student s;
@@ -27,7 +27,7 @@ void Find_Student() {
         }
     }
     if (!found) {
-        printf("No results found\n");
+        printf("No matching results found\n");
     }
     fclose(file);
 }

@@ -7,7 +7,8 @@
         "edit_student.h": "c",
         "add_student.h": "c",
         "find_student.h": "c",
-        "string.h": "c"
+        "string.h": "c",
+        "structure.h": "c"
     },
     "makefile.configureOnOpen": true
 }

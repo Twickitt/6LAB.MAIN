@@ -36,29 +36,29 @@ void Edit_Student() {
     
     int choice;
     do {
-        printf("\nWhat do you want to edit?\n");
-        printf("1. Full Name\n");
-        printf("2. Faculty\n");
-        printf("3. Group\n");
-        printf("4. GPA\n");
-        printf("0. Cancel\n");
+        printf("\nCurrent Data:\n");
+        printf("1. Full Name: %s\n", s.name);
+        printf("2. Faculty: %s\n", s.faculty);
+        printf("3. Group: %s\n", s.group);
+        printf("4. GPA: %.2f\n", s.GPA);
+        printf("0. Save and Exit\n");
         printf("Select option: ");
         scanf("%d", &choice);
-        getchar(); // Очистка буфера
+        getchar(); 
 
         switch (choice) {
             case 1:
-                printf("Enter new Full Name: ");
+                printf("Enter new full name: ");
                 fgets(s.name, sizeof(s.name), stdin);
                 s.name[strcspn(s.name, "\n")] = 0;
                 break;
             case 2:
-                printf("Enter new Faculty: ");
+                printf("Enter new faculty: ");
                 fgets(s.faculty, sizeof(s.faculty), stdin);
                 s.faculty[strcspn(s.faculty, "\n")] = 0;
                 break;
             case 3:
-                printf("Enter new Group: ");
+                printf("Enter new group: ");
                 fgets(s.group, sizeof(s.group), stdin);
                 s.group[strcspn(s.group, "\n")] = 0;
                 break;
@@ -68,16 +68,14 @@ void Edit_Student() {
                 getchar();
                 break;
             case 0:
-                printf("Edit canceled\n");
-                fclose(file);
-                return;
+                fseek(file, (index - 1) * sizeof(Student), SEEK_SET);
+                fwrite(&s, sizeof(Student), 1, file);
+                printf("\nRecord №%d updated\n", index);
+                break;
             default:
-                printf("Invalid option, try again\n");
+                printf("\nInvalid option, try again\n");
         }
-    } while (choice < 0 || choice > 4);
+    } while (choice != 0);
     
-    fseek(file, (index - 1) * sizeof(Student), SEEK_SET);
-    fwrite(&s, sizeof(Student), 1, file);
     fclose(file);
-    printf("Record updated\n");
 }

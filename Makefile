@@ -1,28 +1,28 @@
-TARGET = ./StudentBase.app
-HDRS_DIR = \
-		Add_Student \
-		Delete_Student \
-		Display_Student \  
-		Edit_student \ 
-		Find_Student \
-		Structure 
-SRCS = \
-		Add_Student.c \
-		Delete_Student.c \
-		Display_Student.c \  
-		Edit_student.c \ 
-		Find_Student.c  
+GC=gcc
+Sources = 6lab.o Add_Student.o Delete_Student.o Display_student.o Edit_Student.o Find_Student.o
 
-.PHONY: all, build, clean, run
-$(TARGET):
-		gcc -I $(HDRS_DIR) $(SRCS) -o $(TARGET)
+all: base
 
-all: clear build 
+base: $(Sources)
+	$(GC) $(Sources) -o base
 
-build: $(TARGET)
+6lab.o: 6lab.c
+	$(GC) -c 6lab.c
+
+Add_Student.o: Add_Student.c
+	$(GC) -c Add_Student.c
+
+Delete_Student.o: Delete_Student.c
+	$(GC) -c Delete_Student.c
+
+Display_student.o: Display_student.c
+	$(GC) -c Display_student.c
+
+Edit_Student.o: Edit_Student.c 
+	$(GC) -c Edit_Student.c
+
+Find_Student.o: Find_Student.c
+	$(GC) -c Find_Student.c
 
 clean:
-		rm -rf $(TARGET)
-run:
-		$(TARGET)
-
+	rm -rf *.o base

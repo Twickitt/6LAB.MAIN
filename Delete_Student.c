@@ -27,12 +27,13 @@ void Delete_Student() {
         return;
     }
     int index, count = 1, deleted = 0;
-    printf("Enter the record number to delete (start from number 1): ");
+    printf("\nEnter the record number to delete (start from number 1): ");
     scanf("%d", &index);
     Student s;
     while (fread(&s, sizeof(Student), 1, file)) {
         if (count == index) {
             deleted = 1;
+            printf("\nStudent's № %d data: %s | %s | %s | %.2f\n", index, s.name, s.faculty, s.group, s.GPA);
         } else {
             fwrite(&s, sizeof(Student), 1, temp);
         }
@@ -43,9 +44,9 @@ void Delete_Student() {
     if (deleted) {
         remove(FILE_NAME);
         rename("temp.dat", FILE_NAME);
-        printf("Record deleted\n");
+        printf("Record №%d successfully deleted\n", index);
     } else {
         remove("temp.dat");
-        printf("Error, record not found, choose slot that exists\n");
+        printf("Error, record not found, choose valid slot\n");
     }
 }
