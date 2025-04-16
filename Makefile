@@ -1,5 +1,5 @@
 GC=gcc
-Sources = 6lab.o Add_Student.o Delete_Student.o Display_student.o Edit_Student.o Find_Student.o
+Sources = main.o Add_Student.o Delete_Student.o Display_student.o Edit_Student.o Find_Student.o
 
 all: base
 
