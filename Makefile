@@ -6,8 +6,8 @@ all: base
 base: $(Sources)
 	$(GC) $(Sources) -o base
 
-6lab.o: 6lab.c
-	$(GC) -c 6lab.c
+main.o: main.c
+	$(GC) -c main.c
 
 Add_Student.o: Add_Student.c
 	$(GC) -c Add_Student.c
